@@ -27,12 +27,12 @@ def hello():
     })
 
 def get_temperature(lat, lon):
-    api_key = '0ed6e23c0ca9a82fd80a284328daaa41'
+    api_key = 'api key'
     base_url = 'https://api.openweathermap.org/data/2.5/weather'
     params = {
         'lat': lat,
         'lon': lon,
-        'appid': '0ed6e23c0ca9a82fd80a284328daaa41',
+        'appid': 'api key',
         'units': 'metric'
     }
     response = requests.get(base_url, params=params)
