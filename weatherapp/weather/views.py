@@ -77,7 +77,7 @@ class VisitorsView(generics.GenericAPIView):
             location_response = requests.get(f'https://api.ipfind.com/?ip={client_ip}&auth={geoLocationService}')
             location_response_data = location_response.json()
             print(location_response_data)
-            city = location_response_data.get('city_name', 'New York')
+            city = location_response_data.get('city_name', 'unknown')
             #get location
             
 
