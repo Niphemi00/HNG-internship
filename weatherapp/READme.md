@@ -69,7 +69,11 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
-
+### IMPROPER CONFIGURATION 
+If you get an error like this:
+  USE
+  $export DJANGO_SETTINGS_MODULE=foldername.settings
+  $python manage.py runserver
 ## API Usage
 
 ### Endpoint: GET /api/visitor

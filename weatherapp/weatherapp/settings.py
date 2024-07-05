@@ -11,11 +11,11 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
-import os
 from dotenv import load_dotenv
-load_dotenv()
+import os
+from django.contrib.admin.actions import delete_selected
 
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-ry#8et6u%qjo&cr!)&@4f-1=uxd0dr)6s_xdn#mwf6)7_cen+2"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -45,8 +45,8 @@ INSTALLED_APPS = [
     'rest_framework'
 ]
 # Add your API keys here
-IP2LOCATION_API_KEY = 'your location api key'
-OPENWEATHER_API_KEY = 'your open weather app api key'
+IP2LOCATION_API_KEY = os.getenv("IP2LOCATION_API_KEY")
+OPENWEATHER_API_KEY = os.getenv('OPENWEATHER_API_KEY')
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -57,6 +57,15 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+}
 
 ROOT_URLCONF = "weatherapp.urls"
 
