@@ -22,7 +22,7 @@ This is a simple project built using Django to provide an API endpoint to greet 
 - Django REST Framework
 - Requests
 - Gunicorn
-- Environs
+- pythondotenv
 - Psycopg
 
 ## Installation
@@ -30,8 +30,8 @@ This is a simple project built using Django to provide an API endpoint to greet 
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/BjornOnGit/hng-backend_stage_1.git
-cd hello-api
+git clone https://github.com/Niphemi00/HNG-internship/tree/main/weatherapp
+cd weatherapp
 ```
 
 ### Set Up Virtual Environment
@@ -141,4 +141,4 @@ MIDDLEWARE = [
 
 ## Endpoint Preview
 
-![Endpoint Screenshot](img/endpoint-screenshot.png)
+![Endpoint Screenshot](img/Screenshot 2024-07-05 at 12.36.55.png)
